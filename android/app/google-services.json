@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "764252421122",
+    "firebase_url": "https://chitchatter-bb7cb.firebaseio.com",
+    "project_id": "chitchatter-bb7cb",
+    "storage_bucket": "chitchatter-bb7cb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:764252421122:android:1a2a801771dfee5597bb1b",
+        "android_client_info": {
+          "package_name": "com.chitchatter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "764252421122-migjr00pvcp7s9vrgjl4qqkgpa73gj3f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0wXCp-R5-kalQFlBSNGwc6dh0XSj9E7c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "764252421122-migjr00pvcp7s9vrgjl4qqkgpa73gj3f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
