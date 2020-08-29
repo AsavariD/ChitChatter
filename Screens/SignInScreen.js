@@ -17,7 +17,7 @@ const SignInScreen = ({navigation}) => {
 
       <TextInput
         style={styles.inputBox}
-        placeholder="Username"
+        placeholder="Email-Id"
         placeholderTextColor="#696969"
       />
       <TextInput
