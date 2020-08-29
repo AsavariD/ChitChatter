@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, useState} from 'react';
 import {
   View,
   Text,
@@ -7,28 +7,57 @@ import {
   TextInput,
   Image,
   ScrollView,
+  Alert,
 } from 'react-native';
 import Home from './Home';
 
 const SignInScreen = ({navigation}) => {
+  const [credentials, setCredentials] = useState({
+    email: '',
+    password: '',
+  });
+  const {email, password} = credentials;
+  const handleOnChange = (name, value) => {
+    setCredentials({
+      ...credentials,
+      [name]: value,
+    });
+  };
+
+  const onLoginPress = () => {
+    if (!email) {
+      Alert.alert('No Email-Id Found', 'Please Enter Email-Id');
+    } else if (!password) {
+      Alert.alert('No Password Entered', 'Please Enter Password');
+    } else {
+      alert(JSON.stringify(credentials));
+    }
+  };
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <Image style={styles.image} source={require('../logo_quiz.jpg')} />
 
       <TextInput
         style={styles.inputBox}
+        keyboardType="email-address"
         placeholder="Email-Id"
         placeholderTextColor="#696969"
+        value={email}
+        onChangeText={(text) => handleOnChange('email', text)}
       />
+
       <TextInput
         style={styles.inputBox}
         placeholder="Password"
         placeholderTextColor="#696969"
+        secureTextEntry={true}
+        value={password}
+        onChangeText={(text) => handleOnChange('password', text)}
       />
 
       <TouchableOpacity
         style={styles.loginButton}
-        onPress={() => navigation.navigate('Home')}>
+        onPress={() => onLoginPress()}>
         <Text style={styles.loginButtonText}>SignIn</Text>
       </TouchableOpacity>
       <View style={styles.signUp}>
@@ -47,6 +76,7 @@ const styles = StyleSheet.create({
     flexGrow: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor: '#fff',
   },
   titleText: {
     fontSize: 40,
@@ -55,7 +85,7 @@ const styles = StyleSheet.create({
   },
   loginButton: {
     padding: 5,
-    backgroundColor: '#d8bfd8',
+    backgroundColor: '#daa520',
     borderColor: '#000',
     borderWidth: 3,
     borderRadius: 25,
@@ -75,8 +105,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
   },
   image: {
-    width: 150,
-    height: 150,
+    width: 250,
+    height: 200,
   },
   signUp: {
     flexDirection: 'row',
@@ -84,7 +114,7 @@ const styles = StyleSheet.create({
   },
   signUpText: {
     fontSize: 15,
-    color: 'dodgerblue',
+    color: '#191970',
     fontWeight: 'bold',
   },
 });

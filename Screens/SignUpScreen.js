@@ -28,18 +28,21 @@ const SignUpScreen = ({navigation}) => {
       />
       <TextInput
         style={styles.inputBox}
+        keyboardType="email-address"
         placeholder="Email Address"
         placeholderTextColor="#696969"
       />
       <TextInput
         style={styles.inputBox}
-        placeholder="Verification Code (sent on email)"
+        placeholder="Set Password"
         placeholderTextColor="#696969"
+        secureTextEntry={true}
       />
       <TextInput
         style={styles.inputBox}
-        placeholder="Set password"
+        placeholder="Confirm Password"
         placeholderTextColor="#696969"
+        secureTextEntry={true}
       />
 
       <TouchableOpacity style={styles.signUpButton}>
@@ -60,6 +63,7 @@ const styles = StyleSheet.create({
     flexGrow: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor: '#fff',
   },
   titleText: {
     fontSize: 40,
@@ -68,7 +72,7 @@ const styles = StyleSheet.create({
   },
   signUpButton: {
     padding: 10,
-    backgroundColor: '#d8bfd8',
+    backgroundColor: '#daa520',
     borderColor: '#000',
     borderWidth: 3,
     borderRadius: 25,
@@ -97,7 +101,7 @@ const styles = StyleSheet.create({
   },
   signInText: {
     fontSize: 15,
-    color: 'dodgerblue',
+    color: '#191970',
     fontWeight: 'bold',
   },
 });
